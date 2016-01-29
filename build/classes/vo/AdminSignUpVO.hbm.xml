@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="vo.AdminSignUpVO" table="admin_regi_tab">
+
+		<id name="a_id" type="int" column="AdminID">
+			<generator class="increment" />
+		</id>
+
+		<property name="a_email">
+			<column name="AdminEmail" />
+		</property>
+
+<!-- 		<property name="a_username">
+			<column name="AdminUsername" />
+		</property>
+
+		<property name="a_passwd">
+			<column name="AdminPasswd" />
+		</property>
+		 -->
+		<many-to-one class="vo.LoginVO" name="login" column="LoginID"></many-to-one>
+
+	</class>
+</hibernate-mapping>
